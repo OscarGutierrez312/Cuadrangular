@@ -97,10 +97,26 @@ export async function Match(match_id, team_id, num_goals){
       updateData, 
       {returning:'minimal'})   
     
-    await calcWinsDefeatsDraws(team[0]);
+    
   }
   const matchQ = await match
-  await calcWinsDefeatsDraws(team[0]);
+
+  const data1 = await databaseAdmin
+  .from("Match")
+  .select("*")
+  .eq("id_match", match_id);
+
+
+  console.log(data1)
+
+  if(data1){
+    if(data1.data[0].id_team_1 != null && data1.data[0].id_team_2 != null){
+      await calcWinsDefeatsDraws(data1.data[0].id_team_1);
+      await calcWinsDefeatsDraws(data1.data[0].id_team_2);
+    }
+  }
+  
+  
   
 }
 
