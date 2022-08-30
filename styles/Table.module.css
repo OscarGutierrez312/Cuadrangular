@@ -1,0 +1,29 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    vertical-align: top;
+    justify-content: center;    
+    flex-wrap: inherit;
+    margin-top: -65%;
+    max-width: 1/2;
+    }
+
+    .content h1{
+        color: rgba(11, 154, 197, 0.603);
+        margin-top: -20%;
+    }
+    .content form{
+        padding-bottom: 30%;
+    }
+
+    .content table{
+        width: 100%;
+        margin-left: 20%;
+        margin-right: 15%;
+    }
+
+    .content th{
+        padding: 10px;
+        border: 1px solid;
+    }
